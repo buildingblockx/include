@@ -67,3 +67,4 @@
 	((type *)(__mptr - offsetof(type, member))); })
 
 #endif /* __KERNEL_H */
+

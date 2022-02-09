@@ -248,3 +248,4 @@ static inline int list_empty(const struct list_head *head)
 	     pos = list_prev_entry(pos, member))
 
 #endif /* __LIST_H */
+
