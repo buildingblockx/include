@@ -8,6 +8,14 @@ struct page {
 	unsigned long flags;
 
 	union {
+		struct { /* page allocator */
+			struct list_head list;
+			/*
+			* Indicates order in the buddy system.
+			*/
+			unsigned long private;
+		};
+
 		struct { /* slab allocator */
 			struct list_head slab_list;
 			struct slab_cache *slab_cache;
@@ -19,10 +27,16 @@ struct page {
 			unsigned frozen:1;	/* frozen means that this page is
 						in slab_cache->freelist */
 		};
-	};
 
-	struct list_head list;
-	unsigned long private;
+		struct { /* compound page */
+			/*
+			 * each one page save head page pointer and
+			 * bit zero indicates whether compound page
+			 */
+			unsigned long head;
+			unsigned char order;	/* first page save order only */
+		};
+	};
 };
 
 unsigned long page_allocator_init(void);
