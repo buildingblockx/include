@@ -1,7 +1,7 @@
 #ifndef __COMMON_MEMBLOCK_H
 #define __COMMON_MEMBLOCK_H
 
-#include <common.h>
+#include <types.h>
 
 void memblock_init(void);
 
@@ -15,4 +15,3 @@ void memblock_print_all_region(void);
 int memblock_test(void);
 
 #endif /* __COMMON_MEMBLOCK_H */
-

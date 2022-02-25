@@ -2,7 +2,7 @@
 #define __LIST_H
 
 #include <types.h>
-#include <kernel.h>
+#include <container_of.h>
 
 /*
  * Simple doubly linked list implementation.
@@ -248,4 +248,3 @@ static inline int list_empty(const struct list_head *head)
 	     pos = list_prev_entry(pos, member))
 
 #endif /* __LIST_H */
-

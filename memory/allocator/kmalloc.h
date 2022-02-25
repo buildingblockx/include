@@ -1,7 +1,7 @@
 #ifndef __COMMON_KMALLOC_H
 #define __COMMON_KMALLOC_H
 
-#include <common.h>
+#include <types.h>
 
 void kmalloc_init(void);
 
